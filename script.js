@@ -14,4 +14,4 @@ $('#run-search').on('click', function (event) {
     $.ajax({
         url: url,
         method: "GET"
-    }).then(updatePage)
+    })
