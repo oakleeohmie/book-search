@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project 1</title>
+
+    <meta charset="UTF-8">
+    <title>Find the Best Books!</title>
+
+    <!-- Bootstrap CSS CDN  -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+
+    <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- Style to fix the issue of text extending past card length -->
+    <style>
+        .card-body a {
+            word-break: break-all;
+        }
+
+        .articleHeadline {
+            line-height: .5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="jumbotron" style="background-color:navy ; color: white;">
+        <h1 class="text-center">
+            <strong>
+                <i class="fa fa-book"></i> Best-selling BookFinder</strong>
+        </h1>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <strong>
+                <i class></i>Find best-selling books with just one search!</strong> <br>Since 2019,
+            Best-selling BookFinder has made it easy to find the hottest books on the market. Whether you
+            want to find the most popular books by a certain author, title, genre, or ISBN, with Best-selling
+            BookFinder,
+            you'll find just the right book. Best-selling BookFinder searches the inventories of 2 whole best-selling
+            book
+            lists, allowing you to access millions of books in just one simple step.
+
+        </div>
+        <div class="card-body">
+            <h2></h2>
+        </div>
+    </div>
+    <!-- First card is for handling the search parameters -->
+    <div class="card">
+        <div class="card-header">
+            <strong>
+                <i class="fa fa-list-alt"></i> Search Parameters</strong>
+        </div>
+        <div class="card-body">
+            <!-- Here we create an HTML Form for handling the inputs-->
+            <form role="form">
+                <!-- Here we create the text box for capturing the first search term which is Author.-->
+                <div class="form-group">
+                    <label for="searchAuthor">Author or Title</label>
+                    <input type="text" class="form-control" id="search-authorortitle">
+                </div>
+
+                <!-- Here we capture the ISBN parameter-->
+                <div class="form-group">
+                    <label for="ISBN"> ISBN:</label>
+                    <input type="text" class="form-control" id="search-ISBN">
+                </div>
+                <!-- Here we capture the Genre Parameter -->
+                <div class="form-group">
+                    <label for="genre">Genre:</label>
+                    <input type="text" class="form-control" id="search-genre">
+                </div>
+                <!-- Here we have our final submit button -->
+                <button type="submit" class="btn btn-default" id="run-search">
+                    <i class="fa fa-search"></i> Search</button>
+                <button class="btn btn-default" id="clear-all">
+                    <i class="fa fa-trash"></i> Clear Results</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
