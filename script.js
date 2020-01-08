@@ -9,7 +9,7 @@ function buildNewYorkURL() {
 };
 function buildGoodReadsURL() {
     var goodReads = "https://www.goodreads.com/search.xml?"
-    var url = goodReads + "q=" + authTerm + isbnTerm + "slug=" + genTerm + "&key=506nRRgeF7qmVFcKIaro9g&";
+    var url = goodReads + "q=" + authTerm + isbnTerm + "slug=" + genTerm + "&key=506nRRgeF7qmVFcKIaro9g";
     return (url);
 };
 function clear() {
@@ -24,9 +24,6 @@ function updatePage(bookData) {
         var $bookList = $("<ul>");
         $bookList.addClass("list-groupo");
         $("book-section").append($bookList);
-
-
-
 
     }
 
@@ -44,3 +41,4 @@ $('#run-search').on('click', function (event) {
         url: GRurl,
         method: "GET"
     }).then(updatePage)
+});
