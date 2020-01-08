@@ -23,7 +23,7 @@ function updatePage(bookData) {
         var bookCount = i + 1;
         var $bookList = $("<ul>");
         $bookList.addClass("list-group");
-        $("book-section").append($bookList);
+        $("book-section").append($bookList)
 
     }
 

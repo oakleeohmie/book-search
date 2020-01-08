@@ -24,3 +24,6 @@ body{
 #submit:hover{
 	background-color:navy;
 }
+.header {
+	background-image: url(Essential-Books.jpg) !important; 
+}
