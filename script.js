@@ -19,7 +19,9 @@ function updatePage(bookData) {
     var bookView = $("#results-section").val();
 
     for (i = 0; i < bookView; i++) {
-
+        var book = bookData.reponse.docs[i];
+        var bookCount = i + 1;
+        var $bookList = $("<ul>");
 
     }
 
