@@ -22,7 +22,7 @@ function updatePage(bookData) {
         var book = bookData.reponse.docs[i];
         var bookCount = i + 1;
         var $bookList = $("<ul>");
-        $bookList.addClass("list-groupo");
+        $bookList.addClass("list-group");
         $("book-section").append($bookList);
 
     }
