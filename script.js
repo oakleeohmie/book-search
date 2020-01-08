@@ -24,23 +24,37 @@ function updatePage(bookData) {
         var $bookList = $("<ul>");
         $bookList.addClass("list-group");
         $("book-section").append($bookList);
+        var title = book.title;
+        var $bookListItem = $();
+        if (title && title.main) {
+            $bookListItem.append(
+                "<span class ='label label-primary'>" +
+                bookCount +
+                "</span>" +
+                "</strong>" +
+                book.main +
+                "</strong>"
+            );
+        }
+        var authTitle = book.byline;
+        if (byline && byline.original) {
+            $bookListItem.append("<h5>" + byline.original + "</h5>");
+        }
+
+    };
 
 
-
-
-    }
-
-}
-$('#run-search').on('click', function (event) {
-    event.preventDefault();
-    clear();
-    var NYurl = buildNewYorkURL();
-    var GRurl = buildGoodReadsURL();
-    $.ajax({
-        url: NYurl,
-        method: "GET"
-    }).then(updatePage);
-    $.ajax({
-        url: GRurl,
-        method: "GET"
-    }).then(updatePage)
+    $('#run-search').on('click', function (event) {
+        event.preventDefault();
+        clear();
+        var NYurl = buildNewYorkURL();
+        var GRurl = buildGoodReadsURL();
+        $.ajax({
+            url: NYurl,
+            method: "GET"
+        }).then(updatePage);
+        $.ajax({
+            url: GRurl,
+            method: "GET"
+        }).then(updatePage);
+    });
