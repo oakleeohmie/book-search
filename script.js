@@ -15,6 +15,15 @@ function buildGoodReadsURL() {
 function clear() {
     $("#results-section").empty();
 };
+function updatePage(bookData) {
+    var bookView = $("#results-section").val();
+
+    for (i = 0; i < bookView; i++) {
+
+
+    }
+
+}
 $('#run-search').on('click', function (event) {
     event.preventDefault();
     clear();
