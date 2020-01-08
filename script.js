@@ -9,7 +9,7 @@ function buildNewYorkURL() {
 };
 function buildGoodReadsURL() {
     var goodReads = "https://www.goodreads.com/search.xml?"
-    var url = goodReads + "q=" + authTerm + isbnTerm + "slug=" + genTerm + "&key=506nRRgeF7qmVFcKIaro9g&";
+    var url = goodReads + "q=" + authTerm + isbnTerm + "slug=" + genTerm + "&key=506nRRgeF7qmVFcKIaro9g";
     return (url);
 };
 function clear() {
@@ -23,6 +23,7 @@ function updatePage(bookData) {
         var bookCount = i + 1;
         var $bookList = $("<ul>");
         $bookList.addClass("list-group");
+<<<<<<< HEAD
         $("book-section").append($bookList);
         var title = book.title;
         var $bookListItem = $();
@@ -58,3 +59,24 @@ function updatePage(bookData) {
             method: "GET"
         }).then(updatePage);
     });
+=======
+        $("book-section").append($bookList)
+
+    }
+
+}
+$('#run-search').on('click', function (event) {
+    event.preventDefault();
+    clear();
+    var NYurl = buildNewYorkURL();
+    var GRurl = buildGoodReadsURL();
+    $.ajax({
+        url: NYurl,
+        method: "GET"
+    }).then(updatePage);
+    $.ajax({
+        url: GRurl,
+        method: "GET"
+    }).then(updatePage)
+});
+>>>>>>> cb5b24c7bcdea768146bff73ae14f3e867d56e41
