@@ -18,9 +18,14 @@ function clear() {
 $('#run-search').on('click', function (event) {
     event.preventDefault();
     clear();
-    var url = buildNewYorkURL();
+    var NYurl = buildNewYorkURL();
+    var GRurl = buildGoodReadsURL();
     $.ajax({
-        url: url,
+        url: NYurl,
+        method: "GET"
+    }).then(updatePage);
+    $.ajax({
+        url: GRurl,
         method: "GET"
     }).then(updatePage)
 });
