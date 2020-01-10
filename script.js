@@ -13,8 +13,6 @@ function buildGoodReadsURL() {
     return (url);
 };
 function updatePage() {
-    var results = response.docs[i]
-    var title = results.
 }
 function clear() {
     $("#results-section").empty();
