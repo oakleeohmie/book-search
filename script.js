@@ -13,18 +13,24 @@ function updatePage(bookData) {
     var $bookList = $("<ul>");
     $bookList.addClass("list-group");
     $("#results-section").append($bookList);
-    var title = book.book_title;
-    console.log(title)
+    var author = book.book_author;
+    console.log(author)
     var $bookListItem = $("<li class='list-group-item bookTitle'>");
-    if (title) {
+    if (author) {
         $bookListItem.append(
             "<span class='label label-primary'>" +
-            title +
+            author +
             "</strong>"
         );
     };
+    var title = book.book_title;
+    if (title) {
+        console.log(title);
+        $bookListItem.append("<h5>" + title + "<h5>");
 
-}
+    };
+    $bookList.append($bookListItem);
+};
 function clear() {
     $("#results-section").empty();
 };
