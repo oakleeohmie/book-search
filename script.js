@@ -4,7 +4,7 @@ function buildNewYorkURL() {
     var isbnTerm = $("#search-ISBN").val().trim();
     var genTerm = $("#search-genre").val().trim();
     var nyBook = "https://api.nytimes.com/svc/books/v3/reviews.json?"
-    var url = nyBook + "author=" + authTerm + "&title=" + titleTerm + "&api-key=Elscl5JmJnrLqqoCMZB0BAkVXEoApHOU";
+    var url = nyBook + "author=" + authTerm + "&title=" + titleTerm + "&isbn=" + isbnTerm + "&api-key=Elscl5JmJnrLqqoCMZB0BAkVXEoApHOU";
     return (url);
 };
 function updatePage(bookData) {
@@ -33,6 +33,10 @@ function updatePage(bookData) {
         var summary = book.summary;
         if (summary) {
             $bookListItem.append("<h6>" + summary + "<h6>");
+        };
+        var isbn = book.isbn13;
+        if (isbn) {
+            $bookListItem.append("<p> ISBN: " + isbn + "<p>");
         };
         $bookList.append($bookListItem);
     };
