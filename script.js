@@ -27,4 +27,8 @@ $('#run-search').on('click', function (event) {
         url: NYurl,
         method: "GET"
     }).then(updatePage);
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 200b374f5ecaafebe37241631a09f3928a338ea6
