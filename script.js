@@ -23,7 +23,6 @@ function updatePage(bookData) {
         var bookCount = i + 1;
         var $bookList = $("<ul>");
         $bookList.addClass("list-group");
-<<<<<<< HEAD
         $("book-section").append($bookList);
         var title = book.title;
         var $bookListItem = $();
@@ -59,24 +58,3 @@ function updatePage(bookData) {
             method: "GET"
         }).then(updatePage);
     });
-=======
-        $("book-section").append($bookList)
-
-    }
-
-}
-$('#run-search').on('click', function (event) {
-    event.preventDefault();
-    clear();
-    var NYurl = buildNewYorkURL();
-    var GRurl = buildGoodReadsURL();
-    $.ajax({
-        url: NYurl,
-        method: "GET"
-    }).then(updatePage);
-    $.ajax({
-        url: GRurl,
-        method: "GET"
-    }).then(updatePage)
-});
->>>>>>> cb5b24c7bcdea768146bff73ae14f3e867d56e41
