@@ -13,6 +13,7 @@ function buildGoodReadsURL() {
     return (url);
 };
 function updatePage() {
+    var results = $("#results-section")
 
 };
 function clear() {
