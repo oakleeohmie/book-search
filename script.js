@@ -9,11 +9,11 @@ function buildNewYorkURL() {
 };
 function updatePage(bookData) {
     console.log(bookData)
-    var book = bookData.response;
+    var book = bookData.results[0];
     var $bookList = $("<ul>");
     $bookList.addClass("list-group");
     $("#results-section").append($bookList);
-    var title = book.results.book_title;
+    var title = book.book_title;
     console.log(title)
     var $bookListItem = $("<li class='list-group-item bookTitle'>");
     if (title) {
