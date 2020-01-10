@@ -22,7 +22,7 @@ function updatePage(bookData) {
             title +
             "</strong>"
         );
-    }
+    };
 
 }
 function clear() {
