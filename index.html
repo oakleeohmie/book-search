@@ -9,7 +9,7 @@
 
     <meta charset="UTF-8">
     <title>Find the Best Books!</title>
-
+    <link rel="stylesheet" href="./style.css">
     <!-- Bootstrap CSS CDN  -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
@@ -30,8 +30,7 @@
 </head>
 
 <body>
-
-    <div class="jumbotron" style="background-color:navy ; color: white;">
+    <div class="jumbotron header" style="background-color:navy ; color: white;">
         <h1 class="text-center">
             <strong>
                 <i class="fa fa-book"></i> Best-selling BookFinder</strong>
@@ -63,12 +62,17 @@
         <div class="card-body">
             <!-- Here we create an HTML Form for handling the inputs-->
             <form role="form">
+
                 <!-- Here we create the text box for capturing the first search term which is Author.-->
                 <div class="form-group">
-                    <label for="searchAuthor">Author or Title</label>
-                    <input type="text" class="form-control" id="search-authorortitle">
+                    <label for="searchTitle">Title:</label>
+                    <input type="text" class="form-control" id="search-title">
                 </div>
-
+                <!-- Here we create the text box for capturing the first search term which is Author.-->
+                <div class="form-group">
+                    <label for="searchAuthor">Author:</label>
+                    <input type="text" class="form-control" id="search-author">
+                </div>
                 <!-- Here we capture the ISBN parameter-->
                 <div class="form-group">
                     <label for="ISBN"> ISBN:</label>
@@ -105,8 +109,8 @@
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="./script.js"></script>
 
 </body>
 
