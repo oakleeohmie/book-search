@@ -8,28 +8,34 @@ function buildNewYorkURL() {
     return (url);
 };
 function updatePage(bookData) {
-    console.log(bookData)
-    var book = bookData.results[0];
-    var $bookList = $("<ul>");
-    $bookList.addClass("list-group");
-    $("#results-section").append($bookList);
-    var author = book.book_author;
-    console.log(author)
-    var $bookListItem = $("<li class='list-group-item bookTitle'>");
-    if (author) {
-        $bookListItem.append(
-            "<span class='label label-primary'>" +
-            author +
-            "</strong>"
-        );
-    };
-    var title = book.book_title;
-    if (title) {
-        console.log(title);
-        $bookListItem.append("<h5>" + title + "<h5>");
+    for (i = 0; i < bookData.results.length; i++) {
+        console.log(bookData)
+        var book = bookData.results[i];
+        var $bookList = $("<ul>");
+        $bookList.addClass("list-group");
+        $("#results-section").append($bookList);
+        var author = book.book_author;
+        console.log(author)
+        var $bookListItem = $("<li class='list-group-item bookTitle'>");
+        if (author) {
+            $bookListItem.append(
+                "<span class='label label-primary'>" +
+                author +
+                "</strong>"
+            );
+        };
+        var title = book.book_title;
+        if (title) {
+            console.log(title);
+            $bookListItem.append("<h3>" + title + "<h3>");
 
+        };
+        var summary = book.summary;
+        if (summary) {
+            $bookListItem.append("<h6>" + summary + "<h6>");
+        };
+        $bookList.append($bookListItem);
     };
-    $bookList.append($bookListItem);
 };
 function clear() {
     $("#results-section").empty();
