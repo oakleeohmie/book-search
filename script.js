@@ -12,9 +12,8 @@ $(document).ready(function () {
     function buildDreambooksURL() {
         var authTerm = $("#search-author").val().trim();
         var titleTerm = $("#search-title").val().trim();
-        var genTerm = $("#search-genre").val().trim();
         var dreamBooks = "http://idreambooks.com/api/books/reviews.json?"
-        var url = dreamBooks + "q=" + authTerm + titleTerm + "&slug=" + genTerm + "&key=4a62088f871d332635a4513570e122bae72bf036";
+        var url = dreamBooks + "q=" + authTerm + titleTerm + "&key=4a62088f871d332635a4513570e122bae72bf036";
         return (url);
     };
     function updatePage1(bookData) {
@@ -75,11 +74,6 @@ $(document).ready(function () {
         if (summary2) {
             console.log(summary2)
             $bookListItem.append("<h6>" + summary2 + "<h6>");
-        };
-        var genre = book2.genre;
-        if (genre) {
-            console.log(genre);
-            $bookListItem.append("<p>" + genre + "<p>");
         };
         $bookList.append($bookListItem);
     };
