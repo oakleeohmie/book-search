@@ -87,7 +87,7 @@ $(document).ready(function () {
             method: "GET"
         }).then(updatePage1);
     };
-    function twoAPI(event) {
+    function twoAPI() {
         var DRurl = buildDreambooksURL();
         $.ajax({
             url: DRurl,
