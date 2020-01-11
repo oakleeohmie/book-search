@@ -1,3 +1,5 @@
+var $bookList = $("<ul>");
+var $bookListItem = $("<li class='list-group-item'>");
 function buildNewYorkURL() {
     var authTerm = $("#search-author").val().trim();
     var titleTerm = $("#search-title").val().trim();
@@ -18,12 +20,10 @@ function updatePage1(bookData) {
     for (i = 0; i < bookData.results.length; i++) {
         console.log(bookData)
         var book = bookData.results[i];
-        var $bookList = $("<ul>");
         $bookList.addClass("list-group");
         $("#results-section").append($bookList);
         var author = book.book_author;
         console.log(author)
-        var $bookListItem = $("<li class='list-group-item'>");
         if (author) {
             $bookListItem.append(
                 "<span class='label label-primary'>" +
@@ -49,26 +49,24 @@ function updatePage1(bookData) {
     };
 };
 function updatePage2(bookData2) {
-    for (i = 0; i < bookData2.GoodreadsResponse.search.results.work.best_book.length; i++) {
+    for (i = 0; i < bookData2.book.length; i++) {
         console.log(bookData2)
-        var book2 = bookData2.GoodreadsResponse.search.results.work.best_book[i];
-        var $bookList = $("<ul>");
+        var book2 = bookData2.book[i];
         $bookList.addClass("list-group");
         $("#results-section").append($bookList);
-        var author = book2.author.name;
-        console.log(author)
-        var $bookListItem = $("<li class='list-group-item'>");
-        if (author) {
+        var author2 = book2.author;
+        console.log(author2)
+        if (author2) {
             $bookListItem.append(
                 "<span class='label label-primary'>" +
-                author +
+                author2 +
                 "</strong>"
             );
         };
-        var title = book2.title;
-        if (title) {
-            console.log(title);
-            $bookListItem.append("<h3>" + title + "<h3>");
+        var title2 = book2.title;
+        if (title2) {
+            console.log(title2);
+            $bookListItem.append("<h3>" + title2 + "<h3>");
 
         };
     };
@@ -88,9 +86,9 @@ $('#run-search').on('click', function (event) {
 $('#run-search').on('click', function (event) {
     event.preventDefault();
     clear();
-    var GRurl = buildGoodreadsURL();
+    var DRurl = buildDreambooksURL();
     $.ajax({
-        url: GRurl,
+        url: DRurl,
         method: "GET"
     }).then(updatePage2);
 });
