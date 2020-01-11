@@ -76,6 +76,11 @@ $(document).ready(function () {
             console.log(summary2)
             $bookListItem.append("<h6>" + summary2 + "<h6>");
         };
+        var genre = book2.genre;
+        if (genre) {
+            console.log(genre);
+            $bookListItem.append("<p>" + genre + "<p>");
+        };
         $bookList.append($bookListItem);
     };
     function clear() {
